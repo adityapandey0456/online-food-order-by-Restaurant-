@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mughlai Magic Bistro(menu)</title>
+    <link rel="stylesheet" href="style.css">
+    <script>
+        // Sample menu items (in a real system, these would come from a database)
+        const menuItems = [
+            { name: "Veg Soup", price: 80 },
+            { name: "Manchurian Soup", price: 90 },
+            { name: "Noodles", price: 130 },
+            { name: "French Frys", price: 90 },
+            { name: " Sandwich", price: 150 },
+            { name: " Shahi panner", price: 220 },
+            { name: "Palak Panner ", price: 250 },
+            { name: "Baati Chokha ", price: 240 },
+            { name: "Chilli Panner ", price: 240 },
+            { name: " Baby Corn", price: 180 },
+            { name: " Aloo fry", price: 50 },
+            { name: "Dosa ", price: 230 },
+            { name: " Idli", price: 170 },
+            { name: "Naan ", price: 40 },
+            { name: "Roti ", price: 14 },
+            { name: "Aloo Paratha ", price: 70 },
+            { name: " Panner Paratha", price: 90 },
+            { name: "Laccha Paratha ", price: 60 },
+            { name: " Ice Cream", price: 140 },
+            { name: "Rasgulla ", price:80 },
+            { name: " Gulab jamun", price: 50 },
+
+        ];
+
+        // Initialize an empty order array to store selected items
+        const order = [];
+
+        function addToOrder(itemIndex) {
+            const selectedItem = menuItems[itemIndex];
+            order.push(selectedItem);
+            updateOrderSummary();
+        }
+
+        function updateOrderSummary() {
+            const orderList = document.getElementById("order-list");
+            const totalAmount = document.getElementById("total-amount");
+
+            // Clear existing order list
+            orderList.innerHTML = "";
+            let total = 0;
+
+            // Update the order list and calculate the total amount
+            order.forEach((item, index) => {
+                const listItem = document.createElement("li");
+                listItem.textContent = `${item.name} - ${item.price.toFixed(2)}`;
+                orderList.appendChild(listItem);
+                total += item.price;
+            });
+
+            totalAmount.textContent = `${total.toFixed(2)}`;
+        }
+    </script>
+</head>
+<body>
+    <header>
+        <a href="main.html" target="_blank">
+        <h1 style="padding: 20px; font-family: Futura; color:white;">Mughlai Magic Bistro</h1></a>
+        <nav>
+            <ul style="padding: 10px;">
+                <li><a href="main.html">Home</a></li>
+                <li><a href="#reviews">Customer Reviews</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li><a href="login-form.html    " target="_blank" style="color: white; margin-bottom: 20px;">Login</a></li>
+                <a style="color: white;" href="signup.html" target="_blank">Signup</a>
+
+        </nav>
+    </header>
+
+
+    <section id="menu">
+        <h2>Menu</h2>
+        <br>
+        <h3>Starter</h3>
+        <div class="menu-item">
+            <img src="image/vegsoup.jpg" alt="Dish 1">
+            <h3>Veg Soup</h3>
+            <p>This homemade vegetable soup recipe is hearty, healthy, easy to make, and tastes fantastic. It's also vegan when you use vegetable broth!</p>
+            <p class="price">Price-:₹80</p>
+            <button onclick="addToOrder(0)">Add to Order</button>
+        </div>
+        <div>
+        <img src="image/manchuriansoup.jpg" alt="Dish 1">
+        <h3>Manchurian Soup</h3>
+        <p>This homemade manchurian soup recipe is hearty, healthy, easy to make, and tastes fantastic. It's also vegan when you use vegetable broth!</p>
+        <p class="price">Price-:₹90</p>
+        <button onclick="addToOrder(1)">Add to Order</button>
+    </div>
+
+    <div>
+        <img src="image/noodles.jpg" alt="Dish 1">
+        <h3>Noodles</h3>
+        <p>These cup noodles are very easy to prepare because of its unique packaging…overall taste is very good with just perfect flavors!</p>
+        <p class="price">Price-:₹130</p>
+        <button onclick="addToOrder(2)">Add to Order</button>
+    </div>
+    <div>
+        <img src="image/frenchfrys.jpg" alt="Dish 1">
+        <h3>French Frys</h3>
+        <p> French fries recipe with step by step photo instructions for perfect results - crisp, delicious and flavorful! Also known as finger chips,</p>
+        <p class="price">Price-:₹90</p>
+        <button onclick="addToOrder(3)">Add to Order</button>
+    </div>
+    <div>
+        <img src="image/sandwich.jpg" alt="Dish 1">
+        <h3>Sandwich</h3>
+        <p>A sandwich is a food typically consisting of vegetables, sliced cheese or meat, placed on or between slices of bread, or more generally any dish wherein </p>
+        <p class="price">Price-:₹150</p>
+        <button onclick="addToOrder(4)">Add to Order</button>
+    </div>
+
+    </section>
+    <section>
+        <h3>Main Course</h3>
+        <br>
+        <div>
+            <img src="image/shahipanner.jpg" alt="Dish 1">
+            <h3>Shahi panner</h3>
+            <p>Shahi Paneer is a Mughlai dish. Shahi Paneer literally means "cheese for royalty </p>
+            <p class="price">Price-:₹220</p>
+            <button onclick="addToOrder(5)">Add to Order</button>
+        </div>
+        <div>
+            <img src="image/palakpanner.jpg" alt="Dish 1">
+            <h3>Palak Panner </h3>
+            <p> Palak Paneer recipe is a deliciously creamy, vibrantly green dish made with paneer in a mildly spiced fresh spinach sauce. </p>
+            <p class="price">Price-:₹250</p>
+            <button onclick="addToOrder(6)">Add to Order</button>
+        </div>
+
+        <div>
+            <img src="image/baati choka.jpg" alt="Dish 1">
+            <h3>Baati Chokha</h3>
+            <p> Baati Chokha is a traditional and popular dish from the region of Banaras (also known as Varanasi) in India.  </p>
+            <p class="price">Price-:₹240</p>
+            <button onclick="addToOrder(7)">Add to Order</button>
+        </div>
+
+        
+        <div>
+            <img src="image/chillipanner.jpg" alt="Dish 1">
+            <h3>Chilli Panner</h3>
+            <p> Chilli paneer recipe video - Learn how to make chilli paneer dry and gravy like we get in Indo chinese restaurants.   </p>
+            <p class="price">Price-:₹240</p>
+            <button onclick="addToOrder(8)">Add to Order</button>
+        </div>
+        <div>
+            <img src="image/babycorn.jpg" alt="Dish 1">
+            <h3>Baby Corn</h3>
+            <p>  Baby corn is a cereal grain taken from corn (maize) harvested early while the stalks are still small and immature. It typically is eaten whole—including the    </p>
+            <p class="price">Price-:₹180</p>
+            <button onclick="addToOrder(9)">Add to Order</button>
+        </div>
+        <div>
+            <img src="image/dryaalu.jpg" alt="Dish 1">
+            <h3>Aloo fry</h3>
+            <p> Aloo Fry is a chatpata dry potato preparation, made with a large assortment of spice powders including tongue-tickling ones like garam masala and amchur.   </p>
+            <p class="price">Price-:₹50</p>
+            <button onclick="addToOrder(10)">Add to Order</button>
+        </div>
+        <div>
+            <img src="image/dosa.jpg" alt="Dish 1">
+            <h3>Dosa</h3>
+            <p>  Dosa is the ever-popular South Indian breakfast of crispy crepes made with ground rice and lentil batter that is fermented  </p>
+            <p class="price">Price-:₹230</p>
+            <button onclick="addToOrder(11)">Add to Order</button>
+        </div>
+
+        <div>
+            <img src="image/idli.jpg" alt="Dish 1">
+            <h3>Idli</h3>
+            <p> Idli recipe, learn with detailed tips & tricks how to make soft idli batter using idly rava or rice  </p>
+            <p class="price">Price-:₹170</p>
+            <button onclick="addToOrder(12)">Add to Order</button>
+        </div>
+
+      
+    </section>
+
+    <section>
+        <h3>Roti & Breads</h3>
+        <br>
+
+        <div>
+            <img src="image/naan.jpg" alt="Dish 1">
+            <h3>Naan</h3>
+            <p>  This homemade naan recipe makes soft, chewy naan with a buttery taste. It is the best I have tasted outside of an Indian restaurant.  </p>
+            <p class="price">Price-:40</p>
+            <button onclick="addToOrder(13)">Add to Order</button>
+        </div>
+
+        <div>
+            <img src="image/roti.jpg" alt="Dish 1">
+            <h3>Roti</h3>
+            <p>  Whether you call this staple Indian bread Roti or Phulka or Chapati, it goes perfectly with just about every Indian meal.  </p>
+            <p class="price">Price-:₹14</p>
+            <button onclick="addToOrder(14)">Add to Order</button>
+        </div>
+        <div>
+            <img src="image/aaluparatha.jpg" alt="Dish 1">
+            <h3>Aloo Paratha</h3>
+            <p>  You're going to love Punjabi Aloo Paratha or aloo ka paratha! This potato stuffed flatbread is a popular Indian breakfast that is so good.  </p>
+            <p class="price">Price-:₹70</p>
+            <button onclick="addToOrder(15)">Add to Order</button>
+        </div>
+        <div>
+            <img src="image/pannerparatha.jpg" alt="Dish 1">
+            <h3>Panner Paratha</h3>
+            <p>  Paneer paratha is a delicious flatbread made with paneer, wheat flour, spices and herbs. These are a great food for the entire family.  </p>
+            <p class="price">Price-:₹90</p>
+            <button onclick="addToOrder(16)">Add to Order</button>
+        </div>
+        <div>
+            <img src="image/laccha paratha.jpg" alt="Dish 1">
+            <h3>Laccha Paratha</h3>
+            <p>   Lachha paratha recipe with step-by-step photos. The specialty and uniqueness of this paratha is the many visible flaky, soft, crispy layers. </p>
+            <p class="price">Price-:₹60</p>
+            <button onclick="addToOrder(17)">Add to Order</button>
+        </div>
+    </section>
+    <section>
+        <h2>Dessert</h2>
+        <br>
+        <div>
+            <img src="image/icecream.jpg" alt="Dish 1">
+            <h3>Ice Cream</h3>
+            <p>    Ice Cream & Frozen Dessert online in India at lowest price from top brands like Baskin Robbins, Vadilal, NIC and get delivery in minutes </p>
+            <p class="price">Price-:₹140</p>
+            <button onclick="addToOrder(18)">Add to Order</button>
+        </div>
+
+        <div>
+            <img src="image/rasogulla.jpg" alt="Dish 1">
+            <h3>Rasgulla</h3>
+            <p> Spongy Rasgulla is one of the popular Indian sweet recipes that is made by curdling milk. Then separating the chenna   </p>
+            <p class="price">Price-:₹80</p>
+            <button onclick="addToOrder(19)">Add to Order</button>
+        </div>
+
+        <div>
+            <img src="image/gulab jamun.jpg" alt="Dish 1">
+            <h3>Gulab jamun</h3>
+            <p>   Gulab jamun is a sweet confectionery or dessert, originating in Persia and then later introduced to the Indian subcontinent. It is popular in India, .. </p>
+            <p class="price">Price-:₹50</p>
+            <button onclick="addToOrder(20)">Add to Order</button>
+        </div>
+
+    </section>
+    <section id="order"> 
+        <h2>Your Order</h2>
+        <ul id="order-list"></ul>
+        <p>Total Amount: <span id="total-amount">0.00</span></p>
+    </section>
+        
+
+
+
+
+
+
+
+
+<footer>    
+        <a href="https://github.com/adityapandey0456" target="_blank"><br>
+            <img src="image/gitlogo.jpg" alt="github" style="width:92px;height:38px;"></a>
+        <a href="https://www.linkedin.com/in/aditya-pandey-2442b7244/" target="_blank">
+            <img src="image/link.png" alt="Linkdin" style="width:42px;height:38px;"></a>
+        <br>
+        <br>
+
+        &copy; 2023 Mughlai Magic Bistro
+    </footer>
+</body>
+</html>

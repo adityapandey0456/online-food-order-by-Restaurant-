@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Customer Review Form</title>
+</head>
+<body>
+  <h2>Customer Review Form</h2>
+  <form action="submit_review.php" method="post">
+    <label for="name">Name:</label>
+    <input type="text" id="name" name="name" required><br>
+
+    <label for="email">Email:</label>
+    <input type="email" id="email" name="email" required><br>
+
+    <label for="reviewTitle">Review Title:</label>
+    <input type="text" id="reviewTitle" name="reviewTitle" required><br>
+
+    <label for="reviewText">Review:</label>
+    <textarea id="reviewText" name="reviewText" required></textarea><br>
+
+    <button type="submit">Submit Review</button>
+  </form>
+</body>
+</html>

@@ -1,0 +1,22 @@
+<h2>Customer Reviews</h2>
+<div id="reviews-container">
+</div>
+
+<script>
+    function fetchReviews() {
+        var reviewsContainer = document.getElementById("reviews-container");
+        var xhr = new XMLHttpRequest();
+
+        xhr.open("GET", "get_reviews.php", true);
+
+        xhr.onreadystatechange = function () {
+            if (xhr.readyState === 4 && xhr.status === 200) {
+                reviewsContainer.innerHTML = xhr.responseText;
+            }
+        };
+
+        xhr.send();
+    }
+
+    fetchReviews();
+</script>
